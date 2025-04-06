@@ -1,4 +1,4 @@
-const apiKey = 'AIzaSyAB_oYP0GmT7NLhpoeb2574T9giQ4yj28k';
+const apiKey = 'add_your_key';
 const player = document.getElementById('player'); // Direct reference to iframe
 const loadingDiv = document.getElementById('loading');
 const errorDiv = document.getElementById('error');
