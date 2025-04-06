@@ -1,0 +1,29 @@
+{
+  "name": "VibeTube - Your Vibe",
+  "short_name": "VibeTube",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#111111",
+  "theme_color": "#1db954",
+  "description": "VibeTube is a sleek music streaming app built using the YouTube API. Enjoy your favorite songs with a smooth, modern interface.",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/maskable-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "lang": "en"
+}

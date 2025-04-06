@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VibeTube 🎧</title>
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#1db954">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><img src="https://files.catbox.moe/omu44b.gif" style="width: 70px; height: 70px;"></h1>
+<footer>
+  <marquee behavior="scroll" direction="left" scrollamount="5" style="color: #ff0000; font-family: 'Courier New', monospace; font-size: 20px; font-weight: bold;"><a href="https://Instagram.com/reyaz_sid" style="text-decoration: none;">
+    <img src="https://files.catbox.moe/lq3z16.png" style="width: 70px; height: 70px; background: transparent; border-radius: 50px;">
+  </marquee>
+</footer>
+
+  <!-- Install button (initially hidden) -->
+  <button id="install-btn" style="display: none; position: fixed; bottom: 20px; right: 20px; padding: 5px 10px; background: #1db954; color: white; border: 1px solid black; border-radius: 10px;">Install VibeTube</button>
+
+            <button id="darkModeToggle" onclick="toggleDarkMode()"><img src="https://files.catbox.moe/jsrc4c.gif" style="width: 50px; height: 30px;"></button>
+        </div>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search your music...">
+            <button onclick="searchMusic()"><img src="https://files.catbox.moe/is163f.gif" style="width: 30px; height: 30px;"></button>
+        </div>
+        <div class="player-container">
+            <iframe id="player" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+            <div class="player-controls">
+                <button onclick="stopVideo()">Stop</button>
+                <div class="progress-bar">
+                    <div id="progress" class="progress"></div>
+                </div>
+            </div>
+        </div>
+        <div id="loading" class="loading"><img src="https://media.tenor.com/mV5Kisugr5AAAAAi/huh-question.gif" style="height: 200px; width: 200px;"></div>
+        <div id="error" class="error"></div>
+              <div class="extra-button">
+                    <button onclick="stopVideo()"><img src="https://files.catbox.moe/pbhsbi.gif" style="height: 30px; width: 80px;"></button>
+        <div id="results" class="results"></div>
+        <div id="favorites" class="favorites">
+            <h3><img src="https://files.catbox.moe/4boj4d.png" style="height: 80px; width: 80px;"></h3>
+            <div id="favoritesList"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+<script>
+let deferredPrompt;
+const installBtn = document.getElementById('install-btn');
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault(); // Stop the automatic prompt
+  deferredPrompt = e;
+  installBtn.style.display = 'block'; // Show the button
+
+  installBtn.addEventListener('click', () => {
+    installBtn.style.display = 'none'; // Hide the button
+    deferredPrompt.prompt(); // Show the install prompt
+
+    deferredPrompt.userChoice.then((choiceResult) => {
+      if (choiceResult.outcome === 'accepted') {
+        console.log('User accepted the install prompt');
+      } else {
+        console.log('User dismissed the install prompt');
+      }
+      deferredPrompt = null;
+    });
+  });
+});
+</script>
+</script>
+</body>
+</html>
